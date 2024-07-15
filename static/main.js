@@ -15,7 +15,7 @@ image.addEventListener('change', () => {
   imageBox.innerHTML = `<img src="${image_url}" class="w-25">`;
 });
 
-const alertType = (type, text) => {
+const handelAlert = (type, text) => {
   alertBox.innerHTML = `<div class="alert alert-${type}" role="alert"> ${text} </div>`;
 };
 
@@ -34,7 +34,7 @@ form.addEventListener('submit', e => {
     enctype: 'multipart/form-data',
     data: fd,
     success: function (response) {
-      alertType('success', `successfully save ${response.name}`);
+      handelAlert('success', `successfully save ${response.name}`);
       setTimeout(() => {
         alertBox.innerHTML = '';
         imageBox.innerHTML = '';
@@ -44,7 +44,7 @@ form.addEventListener('submit', e => {
       }, 2000);
     },
     error: function (error) {
-      alertType('danger', 'Ups...! something went wrong!!! ');
+      handelAlert('danger', 'Ups...! something went wrong!!! ');
     },
     cache: false,
     contentType: false,
