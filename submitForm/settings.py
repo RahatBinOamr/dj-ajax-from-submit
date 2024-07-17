@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'photots',
     'crispy_forms',
     'crispy_bootstrap5',
+    'posts'
 ]
 
 MIDDLEWARE = [
